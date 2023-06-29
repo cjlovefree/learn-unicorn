@@ -13,6 +13,7 @@ def hook_memory(uc, access, address, size, value, user_data):
 
 a1 = b'123'
 mu = Uc(UC_ARCH_ARM, UC_MODE_THUMB)
+#mu = Uc(UC_ARCH_ARM64, UC_MODE_ARM) #如果是模拟arm64架构应该这样写
 
 # 分配 so 内存
 image_base = 0x0
