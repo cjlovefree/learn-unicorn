@@ -25,7 +25,7 @@ with open("libnative-lib.so", "rb") as f:
 # 分配 Stack 内存
 stack_base = 0xA0000
 stack_size = 0x10000 * 3
-stack_top = stack_base + stack_size - 0x4
+stack_top = stack_base + stack_size - 0x4 #一般32位的-4就行，64位就-8；是为了防止栈溢出
 mu.mem_map(stack_base, stack_size)
 mu.reg_write(UC_ARM_REG_SP, stack_top)
 
